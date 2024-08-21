@@ -2,17 +2,17 @@
 """
 Caching
 """
-BaseCaching = __import__(base_caching).BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
 
 
-class BaseCaching(BaseCaching):
+class BasicCache(BaseCaching):
     """BaseCaching 
     """
 
     def __init__(self):
         """Initialize
         """
-        pass
+        super().__init__()
 
     def put(self, key, item):
         """Put item value for the key key.
@@ -24,4 +24,4 @@ class BaseCaching(BaseCaching):
         """Get item from cache."""
         if key is None:
             return None
-        return self.cache_data[key]
+        return self.cache_datai.get(key)
