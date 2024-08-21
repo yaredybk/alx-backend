@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-"""
-Caching
-"""
+"""Caching."""
 BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """BaseCaching 
-    """
+    """BaseCaching """
 
     def __init__(self):
-        """Initialize
-        """
+        """Initialize"""
         super().__init__()
 
     def put(self, key, item):
-        """Put item value for the key key.
-        """
+        """Put item value for the key key."""
         if key is not None and item is not None:
             self.cache_data[key] = item
 
@@ -24,4 +19,4 @@ class BasicCache(BaseCaching):
         """Get item from cache."""
         if key is None:
             return None
-        return self.cache_datai.get(key)
+        return self.cache_data.get(key)
