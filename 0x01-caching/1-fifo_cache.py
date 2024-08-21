@@ -24,10 +24,9 @@ class FIFOCache(BaseCaching):
                     self.cache_data.pop(k)
                     print(f'DISCARD: {k}')
                     break
-                # r_key, _ = self.cache_data.popitem(last=True)
 
     def get(self, key):
         """Get item from cache."""
         if key is None:
             return None
-        return self.cache_datai.get(key)
+        return self.cache_data.get(key)
