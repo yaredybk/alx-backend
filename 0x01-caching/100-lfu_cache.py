@@ -45,7 +45,7 @@ class LFUCache(BaseCaching):
                         break
         self.cache_frequency[key] = count
         self.cache_data[key] = item
-        
+
     def get(self, key):
         """Get item from cache."""
         if key is None:
