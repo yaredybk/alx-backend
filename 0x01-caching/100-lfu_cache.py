@@ -20,12 +20,12 @@ class LFUCache(BaseCaching):
         if key is None or item is None:
             return
         count = 0
-        if self.cache_data.get(key) is not None:
+        if key in self.cache_data:
             del self.cache_data[key]
-            count = self.cache_frequency[key]
+            count = self.cache_frequency[key] + 1
         elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             lfu = []
-            minv = 0
+            minv = list(self.cache_frequency.values())[0]
             for _key, _count in self.cache_frequency.items():
                 if _count < minv:
                     lfu = [_key]
