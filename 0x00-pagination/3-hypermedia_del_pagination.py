@@ -47,7 +47,7 @@ class Server:
         fulldata = self.indexed_dataset()
         max_k = max(list(fulldata.keys()))
         assert isinstance(index, int) and index >= 0 and index <= max_k, \
-                "invalid range"
+            "invalid range"
         data = {k: fulldata[k] for k in keylist if k in fulldata}
         next_index = index + page_size
         while next_index < len(fulldata) and fulldata[next_index] is None:
@@ -55,6 +55,6 @@ class Server:
         return {
                 'index': index,
                 'next_index': next_index,
-                'page_size' : len(data),
+                'page_size': len(data),
                 'data': data
                 }
