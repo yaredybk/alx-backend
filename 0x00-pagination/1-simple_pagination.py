@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """
+SERVER CLASS
+
+Server class to paginate a database of popular baby names.
 Simple helper function for pagination.
 """
 import csv
@@ -14,6 +17,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initialize"""
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -28,6 +32,8 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Get pages in the range."""
+
         assert isinstance(page, int) and page > 0, "Page \
                 must be a positive integer"
         assert isinstance(page_size, int) and page_size > 0, "Page \
